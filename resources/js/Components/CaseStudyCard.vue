@@ -11,7 +11,7 @@
         <div class="relative aspect-video bg-[#070d1a] overflow-hidden">
             <template v-if="image">
                 <img
-                    :src="image"
+                    :src="useAsset(image)"
                     :alt="title"
                     loading="lazy"
                     class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -78,6 +78,8 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
+
 defineProps({
     id:          { type: String, required: true },
     title:       { type: String, required: true },

@@ -27,8 +27,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/RusselJobPortfolio/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/RusselJobPortfolio/favicon.ico" />
 
-  <script type="module" crossorigin src="/RusselJobPortfolio/assets/index-DA6JulRb.js"></script>
-  <link rel="stylesheet" crossorigin href="/RusselJobPortfolio/assets/index-CwskoZZW.css">
+    <script>
+        // Automatic subpath image & asset recovery for GitHub Pages
+        window.addEventListener('error', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+                var src = e.target.getAttribute('src');
+                if (src && src.startsWith('/images/')) {
+                    e.target.src = '/RusselJobPortfolio' + src;
+                }
+            }
+        }, true);
+    </script>
+  <script type="module" crossorigin src="/RusselJobPortfolio/assets/index-S2gCeFTZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/RusselJobPortfolio/assets/index-F_bcqy0U.css">
 </head>
 <body class="antialiased bg-[#070d1a] text-white">
     <div id="app"></div>

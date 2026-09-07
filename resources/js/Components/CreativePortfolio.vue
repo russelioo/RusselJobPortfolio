@@ -212,6 +212,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
 
 const activeFilter = ref('all');
@@ -540,6 +541,10 @@ const portfolioItems = [
         featured: false,
     },
 ];
+
+portfolioItems.forEach(item => {
+    if (item.image) item.image = useAsset(item.image);
+});
 
 const filteredItems = computed(() => {
     if (activeFilter.value === 'all') return portfolioItems;

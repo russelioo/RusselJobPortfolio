@@ -303,6 +303,7 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
 import SocialPlatformCard from '@/Components/SocialPlatformCard.vue';
 
@@ -402,6 +403,10 @@ const selectedVisualWork = [
         role: 'Event Promotion & Live Coordination',
     },
 ];
+
+selectedVisualWork.forEach(item => {
+    if (item.image) item.image = useAsset(item.image);
+});
 
 const platforms = [
     {

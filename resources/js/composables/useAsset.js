@@ -7,7 +7,14 @@
  * @returns {string} Full URL with base prepended
  */
 export function useAsset(path) {
-    // import.meta.env.BASE_URL is '/' in dev and '/RusselJobPortfolio/' on GitHub Pages
-    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-    return `${base}${path}`;
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+        return path;
+    }
+    const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+    if (base && path.startsWith(base + '/')) {
+        return path;
+    }
+    const cleanPath = path.startsWith('/') ? path : '/' + path;
+    return `${base}${cleanPath}`;
 }

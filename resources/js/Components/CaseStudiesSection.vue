@@ -216,6 +216,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
 import CaseStudyCard from '@/Components/CaseStudyCard.vue';
 
@@ -778,6 +779,15 @@ const caseStudies = [
         tags: ['Laravel 13', 'Vue 3', 'Tailwind CSS v4', 'Vite', 'Livestream API', 'Hostinger Staging', 'Ongoing'],
     },
 ];
+
+caseStudies.forEach(c => {
+    if (c.image) c.image = useAsset(c.image);
+    if (Array.isArray(c.gallery)) {
+        c.gallery.forEach(g => {
+            if (g.src) g.src = useAsset(g.src);
+        });
+    }
+});
 
 const filteredStudies = computed(() => {
     if (activeFilter.value === 'all') return caseStudies;

@@ -27,6 +27,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
     <link rel="shortcut icon" href="%BASE_URL%favicon.ico" />
 
+    <script>
+        // Automatic subpath image & asset recovery for GitHub Pages
+        window.addEventListener('error', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+                var src = e.target.getAttribute('src');
+                if (src && src.startsWith('/images/')) {
+                    e.target.src = '/RusselJobPortfolio' + src;
+                }
+            }
+        }, true);
+    </script>
     <script type="module" src="/resources/js/app.static.js"></script>
 </head>
 <body class="antialiased bg-[#070d1a] text-white">
