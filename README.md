@@ -1,58 +1,163 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# John Russel N. Soreda — Portfolio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A personal portfolio website for **John Russel N. Soreda** — IT Professional, Project Manager, Web Developer, Social Media Manager, and Digital Communications Specialist.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Layer | Technology |
+|---|---|
+| Backend | [Laravel 13](https://laravel.com) (PHP 8.3) |
+| Frontend SPA | [Inertia.js v3](https://inertiajs.com) + [Vue 3](https://vuejs.org) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com) |
+| Bundler | [Vite 8](https://vite.dev) |
+| Database | SQLite (zero-config, local file) |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 8.3+
+- Composer 2+
+- Node.js 20+ with [pnpm](https://pnpm.io)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Installation
 
 ```bash
-composer require laravel/boost --dev
+# 1. Clone the repository
+git clone https://github.com/russelioo/RusselJobPortfolio.git
+cd RusselJobPortfolio
 
-php artisan boost:install
+# 2. Install PHP dependencies
+composer install
+
+# 3. Copy the environment file and generate an app key
+cp .env.example .env
+php artisan key:generate
+
+# 4. Create the SQLite database and run migrations
+touch database/database.sqlite
+php artisan migrate
+
+# 5. Install Node.js dependencies
+pnpm install
+
+# 6. Build frontend assets
+pnpm run build
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## Environment Variables
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Copy `.env.example` to `.env` and set the following variables:
 
-## Code of Conduct
+| Variable | Description | Default |
+|---|---|---|
+| `APP_NAME` | Application name | `Laravel` |
+| `APP_ENV` | Environment (`local`, `production`) | `local` |
+| `APP_KEY` | Application encryption key (generate with `php artisan key:generate`) | — |
+| `APP_DEBUG` | Show debug info (`true` in dev, `false` in prod) | `true` |
+| `APP_URL` | Full base URL of the app | `http://localhost:8000` |
+| `DB_CONNECTION` | Database driver | `sqlite` |
+| `SESSION_DRIVER` | Session storage (`database`, `file`, `cookie`) | `database` |
+| `CACHE_STORE` | Cache backend | `database` |
+| `MAIL_MAILER` | Mail driver (set to `smtp` in production) | `log` |
+| `MAIL_FROM_ADDRESS` | Default from address for outgoing mail | `hello@example.com` |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> **Note:** Never commit your `.env` file. It is excluded from version control by `.gitignore`.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Development
+
+```bash
+# Start the full development stack (PHP server + Vite HMR)
+composer run dev
+
+# Or run them separately:
+php artisan serve       # PHP dev server at http://localhost:8000
+pnpm run dev            # Vite HMR dev server
+```
+
+---
+
+## Production Build
+
+```bash
+# Build and optimise frontend assets
+pnpm run build
+
+# Clear and cache Laravel config/routes for production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+---
+
+## Running Tests
+
+```bash
+composer run test
+# or
+php artisan test
+```
+
+---
+
+## Deployment
+
+This application requires a **PHP server** and cannot be deployed to static hosting (GitHub Pages, Netlify, etc.).
+
+### Recommended Platforms
+
+| Platform | Notes |
+|---|---|
+| [Laravel Cloud](https://cloud.laravel.com) | Official Laravel hosting — zero-config, scales automatically |
+| [Railway](https://railway.app) | Docker-based, generous free tier, GitHub integration |
+| [Render](https://render.com) | PHP-capable, free tier available |
+| [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform) | Managed PHP runtime |
+| VPS + [Laravel Forge](https://forge.laravel.com) | Full control, starting ~\$5/mo for a Droplet |
+
+### Production Checklist
+
+- Set `APP_ENV=production` and `APP_DEBUG=false`
+- Set `APP_URL` to your live domain
+- Run `php artisan key:generate` if `APP_KEY` is empty
+- Run `php artisan migrate --force`
+- Run `pnpm run build`
+- Run `php artisan config:cache && php artisan route:cache`
+- Set up a queue worker if using queued jobs: `php artisan queue:work`
+
+---
+
+## Project Structure
+
+```
+resources/
+├── js/
+│   ├── Pages/           # Inertia page components (Vue)
+│   ├── Components/      # Reusable Vue components
+│   ├── Layouts/         # Page layout wrappers
+│   └── app.js           # Frontend entry point
+├── css/
+│   └── app.css          # Tailwind CSS entry point
+└── views/
+    └── app.blade.php    # Blade HTML shell (Inertia entry point)
+
+routes/
+└── web.php              # Web routes (single Home route → Inertia)
+
+app/
+└── ...                  # Laravel backend (controllers, models, etc.)
+```
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
