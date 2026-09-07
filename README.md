@@ -111,9 +111,29 @@ php artisan test
 
 ## Deployment
 
-This application requires a **PHP server** and cannot be deployed to static hosting (GitHub Pages, Netlify, etc.).
+### 1. GitHub Pages (Live Static Site)
+The portfolio includes a static Vue SPA build configured for **GitHub Pages**, accessible at:
+👉 **`https://russelioo.github.io/RusselJobPortfolio/`**
 
-### Recommended Platforms
+To build and update the GitHub Pages distribution:
+```bash
+pnpm run build:static
+```
+This compiles the application directly into the `docs/` folder with proper base asset paths.
+An automated GitHub Actions workflow (`.github/workflows/deploy.yml`) is also configured to build and deploy on every push to `main`.
+
+**To enable GitHub Pages in your repository:**
+1. Navigate to your repository on GitHub: `https://github.com/russelioo/RusselJobPortfolio`
+2. Click **Settings** > **Pages**
+3. Under **Build and deployment**:
+   - **Option A (GitHub Actions)**: Choose `GitHub Actions` as the Source.
+   - **Option B (Docs folder)**: Select `Deploy from a branch`, choose branch `main`, and folder `/docs`.
+4. Your site will be live at `https://russelioo.github.io/RusselJobPortfolio/`!
+
+---
+
+### 2. Full-Stack Laravel Hosting (Optional)
+If you want to run the full Laravel backend in production:
 
 | Platform | Notes |
 |---|---|
@@ -122,16 +142,6 @@ This application requires a **PHP server** and cannot be deployed to static host
 | [Render](https://render.com) | PHP-capable, free tier available |
 | [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform) | Managed PHP runtime |
 | VPS + [Laravel Forge](https://forge.laravel.com) | Full control, starting ~\$5/mo for a Droplet |
-
-### Production Checklist
-
-- Set `APP_ENV=production` and `APP_DEBUG=false`
-- Set `APP_URL` to your live domain
-- Run `php artisan key:generate` if `APP_KEY` is empty
-- Run `php artisan migrate --force`
-- Run `pnpm run build`
-- Run `php artisan config:cache && php artisan route:cache`
-- Set up a queue worker if using queued jobs: `php artisan queue:work`
 
 ---
 

@@ -8,7 +8,7 @@
                     <div class="flex items-center gap-3 mb-4">
                         <div class="relative w-8 h-8 rounded-full overflow-hidden border border-blue-500/50 shadow-sm shadow-blue-600/30 shrink-0 bg-blue-950">
                             <img
-                                src="/images/profile.jpg"
+                                :src="profileImg"
                                 alt="John Russel N. Soreda"
                                 class="w-full h-full object-cover object-top"
                             />
@@ -90,6 +90,9 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
+
+const profileImg = useAsset('/images/profile.jpg');
 const year = new Date().getFullYear();
 
 const navLinks = [
@@ -108,7 +111,7 @@ const navLinks = [
     { id: 'contact',      label: 'Contact' },
 ];
 
-const builtWith = ['Laravel 13', 'Vue 3', 'Inertia.js', 'Tailwind CSS v4', 'Vite 8'];
+const builtWith = ['Laravel 13', 'Vue 3', 'Tailwind CSS v4', 'Vite 8'];
 
 function scrollTo(id) {
     const el = document.getElementById(id);

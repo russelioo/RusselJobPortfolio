@@ -16,7 +16,7 @@
                     >
                         <div class="relative w-8 h-8 rounded-full overflow-hidden border border-blue-500/50 group-hover:border-blue-400 transition-all shadow-sm shadow-blue-600/30 shrink-0 bg-blue-950">
                             <img
-                                src="/images/profile.jpg"
+                                :src="profileImg"
                                 alt="John Russel N. Soreda"
                                 class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
                             />
@@ -624,6 +624,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useAsset } from '@/composables/useAsset.js';
+
+const profileImg = useAsset('/images/profile.jpg');
 
 const scrolled = ref(false);
 const mobileOpen = ref(false);

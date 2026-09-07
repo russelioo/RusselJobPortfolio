@@ -54,7 +54,7 @@
                     <!-- Image -->
                     <div class="lg:col-span-5 relative bg-black rounded-sm overflow-hidden border border-[#1e2a3d]/80 aspect-[4/5] flex items-center justify-center">
                         <img
-                            src="/images/portfolio/merchandise/merch-booth-2025.jpg"
+                            :src="merchBoothImg"
                             alt="Onsite merchandise booth and product display proof of activation"
                             class="w-full h-full object-contain p-2"
                             loading="lazy"
@@ -153,7 +153,7 @@
                     <!-- Image -->
                     <div class="lg:col-span-5 relative bg-black rounded-sm overflow-hidden border border-[#1e2a3d]/80 aspect-[16/11] flex items-center justify-center order-1 lg:order-2">
                         <img
-                            src="/images/portfolio/fundraising/fire-fundraising-transparency.jpg"
+                            :src="fireTransparencyImg"
                             alt="Fire victims transparency report showing P146,432.20"
                             class="w-full h-full object-contain p-2"
                             loading="lazy"
@@ -219,7 +219,11 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
+
+const merchBoothImg = useAsset('/images/portfolio/merchandise/merch-booth-2025.jpg');
+const fireTransparencyImg = useAsset('/images/portfolio/fundraising/fire-fundraising-transparency.jpg');
 
 // ─── Timeline Items (Section 17) ────────────────────────────────────
 const timelineItems = [

@@ -13,7 +13,7 @@
                         <!-- Profile photo -->
                         <div class="w-full aspect-[4/5] bg-[#0d1627] border border-[#1e2a3d] rounded-sm overflow-hidden relative group shadow-2xl shadow-black/80" aria-label="Profile photo of John Russel N. Soreda">
                             <img
-                                src="/images/profile.jpg"
+                                :src="profileImg"
                                 alt="John Russel N. Soreda — BS Information Technology, Bicol University"
                                 class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                 loading="eager"
@@ -80,7 +80,10 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
+
+const profileImg = useAsset('/images/profile.jpg');
 
 const pillars = [
     { icon: '⚙️', label: 'Technical',      sub: 'Build & Support' },

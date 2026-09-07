@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="flex items-center gap-2 shrink-0">
                                     <a
-                                        href="/files/John-Russel-Soreda-IT-Developer-Resume.pdf"
+                                        :href="itResumeUrl"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white border border-[#1e2a3d] hover:border-slate-500 rounded-sm transition-colors"
@@ -147,7 +147,7 @@
                                         Preview ↗
                                     </a>
                                     <a
-                                        href="/files/John-Russel-Soreda-IT-Developer-Resume.pdf"
+                                        :href="itResumeUrl"
                                         download="John-Russel-Soreda-IT-Developer-Resume.pdf"
                                         class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors shadow-sm flex items-center gap-1.5"
                                     >
@@ -163,15 +163,15 @@
                             <div class="p-4 bg-[#0a1020] border border-[#1e2a3d] rounded-sm hover:border-sky-700/60 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div>
                                     <div class="flex items-center gap-2">
-                                        <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-sky-600/20 text-sky-300 border border-sky-500/30 rounded-sm">Marketing & Media</span>
+                                        <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-sky-600/20 text-sky-300 border border-sky-500/30 rounded-sm">Marketing &amp; Media</span>
                                         <span class="text-xs text-slate-500 font-mono">2 Pages · PDF</span>
                                     </div>
-                                    <h4 class="text-sm font-bold text-white mt-1.5">Social Media & Marketing Resume</h4>
-                                    <p class="text-xs text-slate-400 mt-0.5">Campaigns, Content Strategy, 10K+ & 17K+ Communities, OBS Livestream, E-Commerce</p>
+                                    <h4 class="text-sm font-bold text-white mt-1.5">Social Media &amp; Marketing Resume</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Campaigns, Content Strategy, 10K+ &amp; 17K+ Communities, OBS Livestream, E-Commerce</p>
                                 </div>
                                 <div class="flex items-center gap-2 shrink-0">
                                     <a
-                                        href="/files/John-Russel-Soreda-Social-Media-Marketing-Resume.pdf"
+                                        :href="socialResumeUrl"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white border border-[#1e2a3d] hover:border-slate-500 rounded-sm transition-colors"
@@ -179,7 +179,7 @@
                                         Preview ↗
                                     </a>
                                     <a
-                                        href="/files/John-Russel-Soreda-Social-Media-Marketing-Resume.pdf"
+                                        :href="socialResumeUrl"
                                         download="John-Russel-Soreda-Social-Media-Marketing-Resume.pdf"
                                         class="px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors shadow-sm flex items-center gap-1.5"
                                     >
@@ -199,11 +199,11 @@
                                         <span class="text-xs text-slate-500 font-mono">4 Pages · PDF</span>
                                     </div>
                                     <h4 class="text-sm font-bold text-white mt-1.5">Complete Portfolio CV (Combined)</h4>
-                                    <p class="text-xs text-slate-400 mt-0.5">Unified technical software engineering + digital marketing & media leadership</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Unified technical software engineering + digital marketing &amp; media leadership</p>
                                 </div>
                                 <div class="flex items-center gap-2 shrink-0">
                                     <a
-                                        href="/files/John-Russel-Soreda-Complete-CV.pdf"
+                                        :href="fullCvUrl"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white border border-[#1e2a3d] hover:border-slate-500 rounded-sm transition-colors"
@@ -211,7 +211,7 @@
                                         Preview ↗
                                     </a>
                                     <a
-                                        href="/files/John-Russel-Soreda-Complete-CV.pdf"
+                                        :href="fullCvUrl"
                                         download="John-Russel-Soreda-Complete-CV.pdf"
                                         class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors shadow-sm flex items-center gap-1.5"
                                     >
@@ -242,6 +242,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAsset } from '@/composables/useAsset.js';
+
+const itResumeUrl = useAsset('/files/John-Russel-Soreda-IT-Developer-Resume.pdf');
+const socialResumeUrl = useAsset('/files/John-Russel-Soreda-Social-Media-Marketing-Resume.pdf');
+const fullCvUrl = useAsset('/files/John-Russel-Soreda-Complete-CV.pdf');
 
 const resumeModalOpen = ref(false);
 

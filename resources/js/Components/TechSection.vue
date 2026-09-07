@@ -29,7 +29,7 @@
                         <!-- Live Interface Preview -->
                         <div class="relative aspect-[16/8] rounded-sm overflow-hidden mb-5 border border-[#1e2a3d] bg-black group">
                             <img
-                                src="/images/portfolio/software/bu-iroquest.jpg"
+                                :src="iroquestImg"
                                 alt="BU-IROQuest Live Portal"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy"
@@ -95,7 +95,7 @@
                         <!-- Live Interface Preview -->
                         <div class="relative aspect-[16/8] rounded-sm overflow-hidden mb-5 border border-[#1e2a3d] bg-black group">
                             <img
-                                src="/images/portfolio/software/bu-rdmd.jpg"
+                                :src="rdmdImg"
                                 alt="RDESys BU RDMD Live Portal"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy"
@@ -153,7 +153,7 @@
                         <!-- Interface Preview -->
                         <div class="relative aspect-[16/8] rounded-sm overflow-hidden mb-5 border border-[#1e2a3d] bg-black group">
                             <img
-                                src="/images/portfolio/software/pilar-shrine.jpg"
+                                :src="pilarImg"
                                 alt="Pilar Shrine Portal Staging"
                                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy"
@@ -224,7 +224,12 @@
 </template>
 
 <script setup>
+import { useAsset } from '@/composables/useAsset.js';
 import SectionHeading from '@/Components/SectionHeading.vue';
+
+const iroquestImg = useAsset('/images/portfolio/software/bu-iroquest.jpg');
+const rdmdImg = useAsset('/images/portfolio/software/bu-rdmd.jpg');
+const pilarImg = useAsset('/images/portfolio/software/pilar-shrine.jpg');
 
 const iroMetrics = [
     { value: '4.76 / 5', label: 'Functional Suitability' },
