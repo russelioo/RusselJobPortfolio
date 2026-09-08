@@ -540,6 +540,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useAsset } from '@/composables/useAsset.js';
 
 const selectedProject = ref(null);
 
@@ -784,6 +785,9 @@ const developmentProjects = [
     },
 ];
 
+developmentProjects.forEach(project => {
+    if (project.image) project.image = useAsset(project.image);
+});
 </script>
 
 <style scoped>
