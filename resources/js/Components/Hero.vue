@@ -261,7 +261,7 @@ function closeResumeModal() {
 }
 
 const subRoles = [
-    'Software Developer', 'Digital Communications', 'Multimedia Producer', 'Front-End Programmer',
+    'Software Developer', 'Digital Communications', 'Multimedia Producer', 'Full-Stack Developer',
 ];
 
 const stats = [

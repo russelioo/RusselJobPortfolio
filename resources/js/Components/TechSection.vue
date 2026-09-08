@@ -62,7 +62,7 @@
                         </div>
                         <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 mt-auto pt-4 border-t border-[#1e2a3d]/60">
                             <div>
-                                <div><strong class="text-slate-400">Role:</strong> Project Manager · Front-End Programmer</div>
+                                <div><strong class="text-slate-400">Role:</strong> Project Manager · Full-Stack Developer</div>
                                 <div class="mt-0.5"><strong class="text-slate-400">Method:</strong> Rapid Application Development (RAD)</div>
                             </div>
                             <a
@@ -121,7 +121,7 @@
                         </div>
                         <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 mt-auto pt-4 border-t border-[#1e2a3d]/60">
                             <div>
-                                <strong class="text-slate-400">Role:</strong> System Development · Front-End Development
+                                <strong class="text-slate-400">Role:</strong> Full-Stack Developer
                             </div>
                             <a
                                 href="https://submission.rdesys.bicol-u.edu.ph/"
@@ -179,7 +179,7 @@
                         </div>
                         <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 mt-auto pt-4 border-t border-[#1e2a3d]/60">
                             <div>
-                                <strong class="text-slate-400">Role:</strong> Full-Stack Developer · Administrator
+                                <strong class="text-slate-400">Role:</strong> Project Manager · Full-Stack Developer · Administrator
                             </div>
                             <a
                                 href="https://honeydew-elephant-708751.hostingersite.com/"

@@ -323,7 +323,7 @@ const resumeFiles = [
         tag: 'Tech & Software',
         tagColor: 'bg-blue-600/20 text-blue-300 border-blue-500/30',
         pages: '2 Pages · PDF',
-        desc: 'Full-stack & front-end development, PHP, Laravel, Vue 3, Inertia.js, MySQL, RDESys, IROQuest',
+        desc: 'Full-stack software development, PHP, Laravel, Vue 3, Inertia.js, MySQL, RDESys, IROQuest',
         file: '/files/John-Russel-Soreda-IT-Developer-Resume.pdf',
         filename: 'John-Russel-Soreda-IT-Developer-Resume.pdf',
     },
