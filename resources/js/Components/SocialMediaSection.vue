@@ -23,36 +23,15 @@
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
                         <a
-                            href="https://www.facebook.com/PilarShrineSorsogon"
+                            v-for="ch in quickChannels"
+                            :key="ch.label"
+                            :href="ch.url"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="px-3 py-1.5 text-xs font-medium bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-blue-800/40 rounded-sm transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-blue-400"
+                            class="px-3 py-1.5 text-xs font-medium border rounded-sm transition-colors flex items-center gap-1.5 focus-visible:ring-2"
+                            :class="ch.badgeClass"
                         >
-                            <span>Facebook: @PilarShrineSorsogon ↗</span>
-                        </a>
-                        <a
-                            href="https://www.facebook.com/larpi2ph"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-3 py-1.5 text-xs font-medium bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border border-blue-800/40 rounded-sm transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-blue-400"
-                        >
-                            <span>Facebook: LARPI ↗</span>
-                        </a>
-                        <a
-                            href="https://www.youtube.com/@PilarShrineSorsogon"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-3 py-1.5 text-xs font-medium bg-red-950/40 hover:bg-red-600/30 text-red-300 hover:text-white border border-red-800/40 rounded-sm transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-red-400"
-                        >
-                            <span>YouTube: @PilarShrineSorsogon ↗</span>
-                        </a>
-                        <a
-                            href="https://www.tiktok.com/@PilarShrineSorsogon"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="px-3 py-1.5 text-xs font-medium bg-slate-800/60 hover:bg-slate-700/60 text-slate-200 hover:text-white border border-slate-700/50 rounded-sm transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-slate-400"
-                        >
-                            <span>TikTok: @PilarShrineSorsogon ↗</span>
+                            <span>{{ ch.label }} ↗</span>
                         </a>
                     </div>
                 </div>
@@ -241,8 +220,8 @@
             <div class="reveal mb-6">
                 <h3 class="text-xs font-bold tracking-[0.2em] uppercase text-slate-500 mb-6">Platform Experience</h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
-                <div v-for="(p, i) in platforms" :key="p.handle" class="reveal" :style="`transition-delay:${i*60}ms`">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-20">
+                <div v-for="(p, i) in platforms" :key="p.platform + '-' + p.handle" class="reveal" :style="`transition-delay:${i*60}ms`">
                     <SocialPlatformCard v-bind="p" />
                 </div>
             </div>
@@ -408,6 +387,49 @@ selectedVisualWork.forEach(item => {
     if (item.image) item.image = useAsset(item.image);
 });
 
+const quickChannels = [
+    {
+        label: 'Facebook: @PilarShrineSorsogon',
+        url: 'https://www.facebook.com/PilarShrineSorsogon',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Facebook: LARPI',
+        url: 'https://www.facebook.com/larpi2ph',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Facebook: OLPS Youth & Altar Servers',
+        url: 'https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Facebook: Pilar NCHS Alumni',
+        url: 'https://www.facebook.com/profile.php?id=61575266135475',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Facebook: Just_Flowers',
+        url: 'https://www.facebook.com/justflowers2022ph/',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Instagram: Just_Flowers',
+        url: 'https://www.instagram.com/justflowers2022ph/',
+        badgeClass: 'bg-pink-950/40 hover:bg-pink-600/30 text-pink-300 hover:text-white border-pink-800/40 focus-visible:ring-pink-400',
+    },
+    {
+        label: 'YouTube: @PilarShrineSorsogon',
+        url: 'https://www.youtube.com/@PilarShrineSorsogon',
+        badgeClass: 'bg-red-950/40 hover:bg-red-600/30 text-red-300 hover:text-white border-red-800/40 focus-visible:ring-red-400',
+    },
+    {
+        label: 'TikTok: @PilarShrineSorsogon',
+        url: 'https://www.tiktok.com/@PilarShrineSorsogon',
+        badgeClass: 'bg-slate-800/60 hover:bg-slate-700/60 text-slate-200 hover:text-white border-slate-700/50 focus-visible:ring-slate-400',
+    },
+];
+
 const platforms = [
     {
         platform: 'Facebook',
@@ -419,18 +441,43 @@ const platforms = [
     },
     {
         platform: 'Facebook',
-        handle: 'OLPS Ministry of the Altar Servers',
-        color: 'text-blue-400',
-        bgColor: 'bg-blue-900/30',
-        responsibilities: ['Short-form content', 'Engagement', 'Ministry communications'],
-    },
-    {
-        platform: 'Facebook',
         handle: 'LARPI',
         url: 'https://www.facebook.com/larpi2ph',
         color: 'text-blue-400',
         bgColor: 'bg-blue-900/30',
         responsibilities: ['Content creation', 'Social media management', 'News writing & publishing', 'Community engagement', 'Page growth & audience management'],
+    },
+    {
+        platform: 'Facebook',
+        handle: 'OLPS Parish Youth Commission & Ministry of Altar Servers',
+        url: 'https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/',
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-900/30',
+        responsibilities: ['Youth commission & ministry updates', 'Event publicity & announcements', 'Community engagement & posting', 'Short-form content'],
+    },
+    {
+        platform: 'Facebook',
+        handle: 'Pilar NCHS Alumni Association',
+        url: 'https://www.facebook.com/profile.php?id=61575266135475',
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-900/30',
+        responsibilities: ['Alumni network communications', 'Grand homecoming announcements', 'Event coverage & photo releases', 'Community moderation'],
+    },
+    {
+        platform: 'Facebook',
+        handle: 'Just_Flowers',
+        url: 'https://www.facebook.com/justflowers2022ph/',
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-900/30',
+        responsibilities: ['Seasonal campaign promotions', 'Customer inquiries & order messaging', 'Product showcase & catalog updates', 'Social media marketing'],
+    },
+    {
+        platform: 'Instagram',
+        handle: 'Just_Flowers',
+        url: 'https://www.instagram.com/justflowers2022ph/',
+        color: 'text-pink-400',
+        bgColor: 'bg-pink-900/30',
+        responsibilities: ['Visual product showcases & reels', 'Aesthetic story updates & highlights', 'Direct message inquiries', 'Brand aesthetic curation'],
     },
     {
         platform: 'YouTube',

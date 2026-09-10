@@ -66,6 +66,18 @@
                         <a href="https://www.facebook.com/larpi2ph" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
                             <span>Facebook: LARPI ↗</span>
                         </a>
+                        <a href="https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
+                            <span>Facebook: OLPS Youth &amp; Altar Servers ↗</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61575266135475" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
+                            <span>Facebook: Pilar NCHS Alumni ↗</span>
+                        </a>
+                        <a href="https://www.facebook.com/justflowers2022ph/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
+                            <span>Facebook: Just_Flowers ↗</span>
+                        </a>
+                        <a href="https://www.instagram.com/justflowers2022ph/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-pink-400 transition-colors flex items-center gap-1">
+                            <span>Instagram: Just_Flowers ↗</span>
+                        </a>
                         <a href="https://www.youtube.com/@PilarShrineSorsogon" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-red-400 transition-colors flex items-center gap-1">
                             <span>YouTube: @PilarShrineSorsogon ↗</span>
                         </a>
