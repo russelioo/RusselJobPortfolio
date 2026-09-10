@@ -399,7 +399,12 @@ const quickChannels = [
         badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
     },
     {
-        label: 'Facebook: OLPS Youth & Altar Servers',
+        label: 'Facebook: OLPS Parish Youth Commission',
+        url: 'https://www.facebook.com/profile.php?id=100064786597799',
+        badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
+    },
+    {
+        label: 'Facebook: OLPS Altar Servers',
         url: 'https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/',
         badgeClass: 'bg-blue-950/40 hover:bg-blue-600/30 text-blue-300 hover:text-white border-blue-800/40 focus-visible:ring-blue-400',
     },
@@ -449,11 +454,19 @@ const platforms = [
     },
     {
         platform: 'Facebook',
-        handle: 'OLPS Parish Youth Commission & Ministry of Altar Servers',
+        handle: 'OLPS Parish Youth Commission',
+        url: 'https://www.facebook.com/profile.php?id=100064786597799',
+        color: 'text-blue-400',
+        bgColor: 'bg-blue-900/30',
+        responsibilities: ['Youth commission communications', 'Parish youth programs & events', 'Community announcements', 'Social media publicity & engagement'],
+    },
+    {
+        platform: 'Facebook',
+        handle: 'OLPS Ministry of the Altar Servers',
         url: 'https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/',
         color: 'text-blue-400',
         bgColor: 'bg-blue-900/30',
-        responsibilities: ['Youth commission & ministry updates', 'Event publicity & announcements', 'Community engagement & posting', 'Short-form content'],
+        responsibilities: ['Ministry announcements & schedules', 'Liturgical service activities', 'Event publicity & community coverage', 'Short-form content & photo updates'],
     },
     {
         platform: 'Facebook',

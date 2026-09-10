@@ -66,8 +66,11 @@
                         <a href="https://www.facebook.com/larpi2ph" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
                             <span>Facebook: LARPI ↗</span>
                         </a>
+                        <a href="https://www.facebook.com/profile.php?id=100064786597799" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
+                            <span>Facebook: OLPS Parish Youth Commission ↗</span>
+                        </a>
                         <a href="https://www.facebook.com/OLPSMinistryoftheAltarServersPilar/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
-                            <span>Facebook: OLPS Youth &amp; Altar Servers ↗</span>
+                            <span>Facebook: OLPS Ministry of Altar Servers ↗</span>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61575266135475" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1">
                             <span>Facebook: Pilar NCHS Alumni ↗</span>
